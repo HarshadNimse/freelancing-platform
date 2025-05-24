@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreelanceHub - Connect with Top Freelancers</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">FreelanceHub</a>
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#browse-projects">Browse Projects</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="login.html" class="btn btn-outline">Login</a></li>
+          <li><a href="register.html" class="btn btn-primary">Register</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Find the perfect <span class="highlight">freelance</span> match for your business</h1>
+          <p>Connect with skilled professionals to get your projects done quickly and efficiently.</p>
+          <div class="hero-buttons">
+            <a href="register.html?role=client" class="btn btn-primary">I need a freelancer</a>
+            <a href="register.html?role=freelancer" class="btn btn-secondary">I want to work</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Freelancer working">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="how-it-works" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>How FreelanceHub Works</h2>
+        <p>Simple, reliable, and designed for success</p>
+      </div>
+      
+      <div class="steps">
+        <div class="step">
+          <div class="step-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3>Post a Project</h3>
+          <p>Create a detailed project listing specifying your requirements, budget, and timeline.</p>
+        </div>
+        
+        <div class="step">
+          <div class="step-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Get Proposals</h3>
+          <p>Receive proposals from skilled freelancers interested in working on your project.</p>
+        </div>
+        
+        <div class="step">
+          <div class="step-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3>Choose the Best</h3>
+          <p>Review proposals, select the best match, and start working together on your project.</p>
+        </div>
+        
+        <div class="step">
+          <div class="step-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>Complete Project</h3>
+          <p>Collaborate effectively and complete your project with professional results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="browse-projects" class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Projects</h2>
+        <p>Discover opportunities that match your skills</p>
+      </div>
+      
+      <div class="projects-grid" id="featured-projects">
+        <!-- Projects will be loaded here via JavaScript -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Website Redesign</h3>
+            <span class="budget">$1,500</span>
+          </div>
+          <p>Looking for an experienced web designer to refresh our company website with modern design elements.</p>
+          <div class="project-skills">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>UI/UX</span>
+          </div>
+          <div class="project-footer">
+            <span class="deadline"><i class="fas fa-clock"></i> 14 days</span>
+            <a href="login.html" class="btn btn-sm btn-primary">Apply Now</a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Mobile App Development</h3>
+            <span class="budget">$3,000</span>
+          </div>
+          <p>Need a developer to create a cross-platform mobile app for food delivery service with order tracking.</p>
+          <div class="project-skills">
+            <span>React Native</span>
+            <span>Firebase</span>
+            <span>API Integration</span>
+          </div>
+          <div class="project-footer">
+            <span class="deadline"><i class="fas fa-clock"></i> 30 days</span>
+            <a href="login.html" class="btn btn-sm btn-primary">Apply Now</a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Logo Design</h3>
+            <span class="budget">$500</span>
+          </div>
+          <p>Looking for a creative designer to create a modern logo for a new fitness brand targeting young adults.</p>
+          <div class="project-skills">
+            <span>Illustrator</span>
+            <span>Graphic Design</span>
+            <span>Branding</span>
+          </div>
+          <div class="project-footer">
+            <span class="deadline"><i class="fas fa-clock"></i> 7 days</span>
+            <a href="login.html" class="btn btn-sm btn-primary">Apply Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="view-more">
+        <a href="login.html" class="btn btn-outline">View All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Success Stories</h2>
+        <p>Hear from our satisfied clients and freelancers</p>
+      </div>
+      
+      <div class="testimonials-slider">
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"I found the perfect developer for my e-commerce site within 48 hours. The quality of work exceeded my expectations, and we completed the project ahead of schedule."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Client">
+            <div class="author-info">
+              <h4>Michael Johnson</h4>
+              <p>E-commerce Business Owner</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"FreelanceHub has transformed my freelancing career. The quality of clients and projects is exceptional, and I've been able to build long-term professional relationships."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Freelancer">
+            <div class="author-info">
+              <h4>Sarah Williams</h4>
+              <p>Full-Stack Developer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to get started?</h2>
+        <p>Join our community of professionals and start collaborating today.</p>
+        <div class="cta-buttons">
+          <a href="register.html?role=client" class="btn btn-primary">Hire a Freelancer</a>
+          <a href="register.html?role=freelancer" class="btn btn-secondary">Become a Freelancer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>FreelanceHub</h2>
+          <p>Connecting talent with opportunity</p>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>For Clients</h3>
+            <ul>
+              <li><a href="#">How to Hire</a></li>
+              <li><a href="#">Talent Marketplace</a></li>
+              <li><a href="#">Project Catalog</a></li>
+              <li><a href="#">Success Stories</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h3>For Freelancers</h3>
+            <ul>
+              <li><a href="#">How to Find Work</a></li>
+              <li><a href="#">Create Profile</a></li>
+              <li><a href="#">Community</a></li>
+              <li><a href="#">Success Stories</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#">Help & Support</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Community</a></li>
+              <li><a href="#">Affiliate Program</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 FreelanceHub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

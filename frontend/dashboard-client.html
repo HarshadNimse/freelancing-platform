@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Dashboard | FreelanceHub</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="dashboard-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2 class="logo">FreelanceHub</h2>
+        <button class="sidebar-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      
+      <div class="user-info">
+        <div class="user-avatar">
+          <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="user-details">
+          <h3 id="user-name">Loading...</h3>
+          <span id="user-role" class="user-role">Client</span>
+        </div>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="active">
+            <a href="#dashboard"><i class="fas fa-th-large"></i> Dashboard</a>
+          </li>
+          <li>
+            <a href="#projects"><i class="fas fa-clipboard-list"></i> My Projects</a>
+          </li>
+          <li>
+            <a href="#proposals"><i class="fas fa-file-contract"></i> Proposals</a>
+          </li>
+          <li>
+            <a href="#messages"><i class="fas fa-comment"></i> Messages</a>
+          </li>
+          <li>
+            <a href="#profile"><i class="fas fa-user"></i> Profile</a>
+          </li>
+          <li>
+            <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <button id="logout-btn" class="btn btn-outline btn-sm">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </div>
+    </aside>
+    
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <div class="header-content">
+          <h1>Client Dashboard</h1>
+          <div class="header-actions">
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Search projects...">
+            </div>
+            <button id="create-project-btn" class="btn btn-primary">
+              <i class="fas fa-plus"></i> New Project
+            </button>
+          </div>
+        </div>
+      </header>
+      
+      <div class="dashboard-content">
+        <div class="section" id="dashboard-section">
+          <div class="dashboard-summary">
+            <div class="summary-card">
+              <div class="summary-icon">
+                <i class="fas fa-clipboard-list"></i>
+              </div>
+              <div class="summary-info">
+                <h3 id="total-projects">0</h3>
+                <p>Total Projects</p>
+              </div>
+            </div>
+            
+            <div class="summary-card">
+              <div class="summary-icon">
+                <i class="fas fa-file-contract"></i>
+              </div>
+              <div class="summary-info">
+                <h3 id="total-proposals">0</h3>
+                <p>Proposals Received</p>
+              </div>
+            </div>
+            
+            <div class="summary-card">
+              <div class="summary-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="summary-info">
+                <h3 id="active-projects">0</h3>
+                <p>Active Projects</p>
+              </div>
+            </div>
+            
+            <div class="summary-card">
+              <div class="summary-icon">
+                <i class="fas fa-flag-checkered"></i>
+              </div>
+              <div class="summary-info">
+                <h3 id="completed-projects">0</h3>
+                <p>Completed Projects</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="dashboard-recent">
+            <div class="section-header">
+              <h2>Recent Projects</h2>
+              <a href="#projects" class="view-all">View All</a>
+            </div>
+            
+            <div class="projects-list" id="recent-projects">
+              <!-- Projects will be loaded here via JavaScript -->
+              <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+                <span>Loading projects...</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="dashboard-recent">
+            <div class="section-header">
+              <h2>Recent Proposals</h2>
+              <a href="#proposals" class="view-all">View All</a>
+            </div>
+            
+            <div class="proposals-list" id="recent-proposals">
+              <!-- Proposals will be loaded here via JavaScript -->
+              <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+                <span>Loading proposals...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="section hidden" id="projects-section">
+          <div class="section-header with-actions">
+            <h2>My Projects</h2>
+            <div class="header-actions">
+              <div class="filter-dropdown">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-filter"></i> Filter
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a href="#" data-filter="all">All Projects</a>
+                  <a href="#" data-filter="Pending">Pending</a>
+                  <a href="#" data-filter="Approved">Approved</a>
+                  <a href="#" data-filter="Completed">Completed</a>
+                  <a href="#" data-filter="Cancelled">Cancelled</a>
+                </div>
+              </div>
+              <button id="create-project-btn-2" class="btn btn-primary">
+                <i class="fas fa-plus"></i> New Project
+              </button>
+            </div>
+          </div>
+          
+          <div class="projects-list" id="all-projects">
+            <!-- Projects will be loaded here via JavaScript -->
+            <div class="loading-spinner">
+              <i class="fas fa-spinner fa-spin"></i>
+              <span>Loading projects...</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="section hidden" id="proposals-section">
+          <div class="section-header with-actions">
+            <h2>Proposals Received</h2>
+            <div class="header-actions">
+              <div class="filter-dropdown">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-filter"></i> Filter
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a href="#" data-filter="all">All Proposals</a>
+                  <a href="#" data-filter="Pending">Pending</a>
+                  <a href="#" data-filter="Accepted">Accepted</a>
+                  <a href="#" data-filter="Rejected">Rejected</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="proposals-by-project" id="all-proposals">
+            <!-- Proposals grouped by project will be loaded here -->
+            <div class="loading-spinner">
+              <i class="fas fa-spinner fa-spin"></i>
+              <span>Loading proposals...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Create Project Modal -->
+  <div class="modal" id="create-project-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Create New Project</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="create-project-form">
+          <div class="form-group">
+            <label for="project-title">Project Title</label>
+            <input type="text" id="project-title" name="title" required placeholder="Enter a descriptive title">
+          </div>
+          
+          <div class="form-group">
+            <label for="project-description">Description</label>
+            <textarea id="project-description" name="description" rows="4" required placeholder="Describe your project in detail"></textarea>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="project-budget">Budget ($)</label>
+              <input type="number" id="project-budget" name="budget" min="5" required placeholder="Your budget">
+            </div>
+            
+            <div class="form-group">
+              <label for="project-deadline">Deadline</label>
+              <input type="date" id="project-deadline" name="deadline" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="project-skills">Required Skills (comma separated)</label>
+            <input type="text" id="project-skills" name="skills" placeholder="e.g. JavaScript, React, Node.js">
+          </div>
+          
+          <div class="form-actions">
+            <button type="button" class="btn btn-outline modal-close-btn">Cancel</button>
+            <button type="submit" class="btn btn-primary">Create Project</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- View Project Modal -->
+  <div class="modal" id="view-project-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="view-project-title">Project Title</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="project-details">
+          <div class="project-status" id="view-project-status">
+            <span class="status-badge pending">Pending</span>
+          </div>
+          
+          <div class="detail-group">
+            <h3>Description</h3>
+            <p id="view-project-description">Project description will appear here.</p>
+          </div>
+          
+          <div class="detail-row">
+            <div class="detail-group">
+              <h3>Budget</h3>
+              <p id="view-project-budget">$0</p>
+            </div>
+            
+            <div class="detail-group">
+              <h3>Deadline</h3>
+              <p id="view-project-deadline">Not set</p>
+            </div>
+          </div>
+          
+          <div class="detail-group">
+            <h3>Required Skills</h3>
+            <div class="skills-list" id="view-project-skills">
+              <!-- Skills will be loaded here -->
+            </div>
+          </div>
+          
+          <div class="detail-group" id="view-project-proposals-section">
+            <h3>Proposals</h3>
+            <div class="proposals-mini-list" id="view-project-proposals">
+              <!-- Proposals will be loaded here -->
+              <p class="no-data">No proposals received yet.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-actions" id="project-actions">
+          <button class="btn btn-outline btn-sm" id="delete-project-btn">
+            <i class="fas fa-trash-alt"></i> Delete Project
+          </button>
+          <button class="btn btn-secondary btn-sm" id="edit-project-btn">
+            <i class="fas fa-edit"></i> Edit Project
+          </button>
+          <button class="btn btn-primary btn-sm" id="approve-project-btn">
+            <i class="fas fa-check"></i> Approve Project
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- View Proposal Modal -->
+  <div class="modal" id="view-proposal-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Proposal Details</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="proposal-details">
+          <div class="detail-group">
+            <h3>Project</h3>
+            <p id="proposal-project-title">Project title will appear here.</p>
+          </div>
+          
+          <div class="detail-group">
+            <h3>Freelancer</h3>
+            <div class="freelancer-info" id="proposal-freelancer-info">
+              <p id="proposal-freelancer-name">Freelancer name</p>
+              <div class="skills-list" id="proposal-freelancer-skills">
+                <!-- Skills will be loaded here -->
+              </div>
+            </div>
+          </div>
+          
+          <div class="detail-group">
+            <h3>Message</h3>
+            <p id="proposal-message">Proposal message will appear here.</p>
+          </div>
+          
+          <div class="detail-row">
+            <div class="detail-group">
+              <h3>Expected Budget</h3>
+              <p id="proposal-budget">$0</p>
+            </div>
+            
+            <div class="detail-group">
+              <h3>Status</h3>
+              <div id="proposal-status">
+                <span class="status-badge pending">Pending</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="proposal-actions" id="proposal-actions">
+          <button class="btn btn-outline btn-sm" id="reject-proposal-btn">
+            <i class="fas fa-times"></i> Reject Proposal
+          </button>
+          <button class="btn btn-primary btn-sm" id="accept-proposal-btn">
+            <i class="fas fa-check"></i> Accept Proposal
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/dashboard-client.js"></script>
+</body>
+</html>

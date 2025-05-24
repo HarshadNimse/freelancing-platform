@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | FreelanceHub</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">FreelanceHub</a>
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="index.html#browse-projects">Browse Projects</a></li>
+          <li><a href="index.html#testimonials">Testimonials</a></li>
+          <li><a href="login.html" class="active btn btn-outline">Login</a></li>
+          <li><a href="register.html" class="btn btn-primary">Register</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h2>Welcome Back</h2>
+        <p>Log in to your FreelanceHub account</p>
+      </div>
+
+      <div id="error-message" class="error-message"></div>
+
+      <form id="login-form" class="auth-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" name="password" required placeholder="Enter your password">
+            <button type="button" class="password-toggle" title="Show password">
+              <i class="fas fa-eye"></i>
+            </button>
+            
+          </div>
+        </div>
+
+        <div class="form-group remember-forgot">
+          <div>
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember">Remember me</label>
+          </div>
+          <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Log In</button>
+      </form>
+
+      <div class="auth-footer">
+        <p>Don't have an account? <a href="register.html">Register</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2025 FreelanceHub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
